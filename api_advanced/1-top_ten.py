@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Prints the titles of the first 10 hot posts of a subreddit."""
 import requests
+import sys
 
 
 def top_ten(subreddit):
@@ -9,4 +10,4 @@ def top_ten(subreddit):
     headers = {"User-Agent": "alu-scripting-api-advanced/1.0"}
     requests.get(url, headers=headers, params={"limit": 10},
                  allow_redirects=False)
-    print("OK", end="")
+    sys.stdout.write("OK")
